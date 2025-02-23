@@ -1,0 +1,6 @@
+<h1>counter {{ counter }}</h1>
+
+<app-child [dataChild]="dataChild" (sendData)="receivedDataFromChild($event)" (incrementFromChild)="increment()" 
+(decrementFromChild)="decrement()" (incrementFromChild)="increment()"/>
+
+<h5>{{ receivedData }}</h5>

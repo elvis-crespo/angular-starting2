@@ -1,0 +1,12 @@
+<p>child works!</p>
+<h1>counter {{ dataChild }}</h1>
+
+<div>
+  <input type="text" [(ngModel)]="message" />
+  <button (click)="SendDataToFather()">Send</button>
+</div>
+
+<div>
+  <button (click)="decrement()">➖</button>
+  <button (click)="increment()">➕</button>
+</div>
