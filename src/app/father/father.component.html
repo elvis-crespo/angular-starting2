@@ -1,6 +1,15 @@
-<h1>counter {{ counter }}</h1>
+<!-- <h1>counter {{ counter }}</h1>
 
 <app-child [dataChild]="dataChild" (sendData)="receivedDataFromChild($event)" (incrementFromChild)="increment()" 
 (decrementFromChild)="decrement()" (incrementFromChild)="increment()"/>
 
-<h5>{{ receivedData }}</h5>
+<h5>{{ receivedData }}</h5> -->
+
+
+<h1 appStyle>{{nombre | pipe}}</h1>
+<button type="button" (click)="saludar()">Saludar</button>
+<button type="button" (click)="preguntar()">Preguntar</button>
+<h2>{{date | date:'MM-dd-yyyy'}}</h2>
+<h2>{{dollar | currency:'EUR'}}</h2>
+<h2>{{pi | number:'1.2-6'}}</h2>
+<h2>{{factorial | percent}}</h2>

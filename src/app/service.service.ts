@@ -28,8 +28,9 @@ export class ServiceService {
     console.log('Hola ' + brother);
   }
   
-  saludar2(brother: string) {
-    console.log('Adios ' + brother);
+  preguntar() {
+    return ('¿Qué tal? ');
   }
 
+  constructor() { }
 }

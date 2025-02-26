@@ -1,22 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { ChildComponent } from "../child/child.component";
 import { ServiceService } from '../service.service';
+import { StyleDirective } from '../style.directive';
+import { PipePipe } from '../pipe.pipe';
+import { CurrencyPipe, DatePipe, DecimalPipe, PercentPipe } from '@angular/common';
 
 @Component({
   selector: 'app-father',
   templateUrl: './father.component.html',
   styleUrl: './father.component.css',
-  imports: [ChildComponent],
+  imports: [StyleDirective, PipePipe, DatePipe, CurrencyPipe, DecimalPipe, PercentPipe],
 })
 export class FatherComponent implements OnInit {
 
   constructor( private _serice: ServiceService) { }
 
-  ngOnInit() {
-    this._serice.setBrother1('Hermano 1');
+  nombre = '';
+  date = new Date();
+  dollar = 1000;
+  pi = Math.PI;
+  factorial = 0.5;
+
+  ngOnInit(): void {
     this._serice.setBrother2('Hermano 2');
-    this._serice.saludar(this._serice.getBrother1());
-    this._serice.saludar2(this._serice.getBrother2());
+    this.nombre = this._serice.getBrother2();
+  }
+  saludar() {
+    this._serice.saludar(this._serice.getBrother1() || 'No hay hermano 1');
+  }
+
+  preguntar() {
+    console.log(this._serice.preguntar());
   }
 
   counter = 0;
