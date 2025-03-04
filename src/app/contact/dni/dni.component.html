@@ -1,0 +1,18 @@
+<form [formGroup]="formDoc">
+  <label for="dni" class="form-label">{{ newVar }}</label>
+  <input
+    type="text"
+    class="form-control"
+    id="dni"
+    name="dni"
+    formControlName="dni"
+    [ngClass]="{
+      'is-invalid': hasErrors('dni', 'required') || hasErrors('dni', 'pattern')
+    }"
+  />
+  <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
+    {{ newVar }} is required
+    <div class="text-danger" *ngIf="hasErrors('dni', 'pattern')"></div>
+    {{ newVar }} must be numeric and at least 8 digits
+  </div>
+</form>

@@ -13,10 +13,9 @@
           <tr>
             <th scope="row">{{ product.id }}</th>
             <td>{{ product.name }}</td>
-            <td>{{ product.price | currency }}</td>
-            <td>{{ product.description }}</td>
+            <td [ngClass]="{'red-colour': product.price > 5}">{{ product.price | currency }}</td>
+            <td>{{ product.description || 'No description available' }}</td>
             <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', product.id]">Details</button>
-
           </tr>
         }
     </tbody>
